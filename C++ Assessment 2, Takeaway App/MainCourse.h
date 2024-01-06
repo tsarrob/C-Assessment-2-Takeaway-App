@@ -1,5 +1,6 @@
 #pragma once
-class MainCourse
+#include "Item.h"
+class MainCourse: public Item
 {
 };
 
