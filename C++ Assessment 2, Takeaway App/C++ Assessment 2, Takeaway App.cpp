@@ -1,7 +1,13 @@
 #include <iostream>
+#include "Menu.h"
+
+//READ ME
+//PLEASE USE ISO C++ 17 LANGUAGE STANDARD 
+
+//Written by Robert Lipodatenko
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Menu menu = Menu("menu.csv");
 }
 
