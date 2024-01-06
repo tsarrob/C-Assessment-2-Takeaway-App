@@ -1,17 +1,17 @@
 #include "Order.h"
-#include <string>
+
 
 float Order::calculateTotal()
 {
-	return;
+	return 0;
 }
 
 std::string Order::printReceipt()
 {
-	return;
+	return 0;
 }
 
 int Order::toString()
 {
-	return;
+	return 0;
 }

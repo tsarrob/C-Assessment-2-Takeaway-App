@@ -2,10 +2,10 @@
 
 bool Beverage::isAlcoholic()
 {
-	return;
+	return 0;
 }
 
 int Beverage::toString()
 {
-	return;
+	return 0;
 }

@@ -1,10 +1,10 @@
 #pragma once
 #include <vector>
-class ItemList
+class ItemList //Abstract class
 {
 public:
 	std::vector<int> items;
 
-	int toString();
+	virtual void toString() = 0; //pure virtual function
 };
 

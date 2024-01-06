@@ -2,5 +2,5 @@
 
 int Item::toString()
 {
-	return;
+	return 0;
 }
