@@ -1,7 +1,8 @@
 #pragma once
+#include "ItemList.h"
 #include <string>
 
-class Order
+class Order: public ItemList
 {
 private:
 	float total;

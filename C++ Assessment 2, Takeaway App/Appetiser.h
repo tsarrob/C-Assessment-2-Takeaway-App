@@ -3,9 +3,19 @@
 class Appetiser: public Item 
 {
 private:
+
+	//private attributes
 	bool shareable;
 	bool twoForOne;
 
-	//bool toString();
+	//get functions
+	bool getShareable();
+	bool getTwoForOne();
+	
+
+
+public:
+	//other functions
+	std::string toString();
 };
 

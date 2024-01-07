@@ -1,11 +1,25 @@
 #include "Beverage.h"
 
+
+//get functions
+float Beverage::getAbv()
+{
+	return abv;
+}
+int Beverage::getVolume()
+{
+	return volume;
+}
+
+
+
+//other functions
 bool Beverage::isAlcoholic()
 {
 	return 0;
 }
 
-int Beverage::toString()
+std::string Beverage::toString()
 {
-	return 0;
+	return;
 }

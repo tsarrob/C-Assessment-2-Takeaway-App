@@ -1,12 +1,12 @@
 #pragma once
+#include "ItemList.h"
 #include <string>
 
-
-
-class Menu
+class Menu: public ItemList
 {
 public:
 	Menu(std::string textfile); //constructor
-	void load(std::string textfile);//opens menu textfile
+	~Menu(); //destructor
+	void load(std::string textfile);//opens menu text file
 };
 
