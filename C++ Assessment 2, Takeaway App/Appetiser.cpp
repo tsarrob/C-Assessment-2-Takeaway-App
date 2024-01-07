@@ -19,5 +19,5 @@ bool Appetiser::getTwoForOne()
 //other functions
 std::string Appetiser::toString()
 {
-	return;
+	return "return";
 }

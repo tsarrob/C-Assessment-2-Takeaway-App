@@ -1,4 +1,9 @@
 #include "Menu.h"
+#include "Item.h"
+#include "Appetiser.h"
+#include "Beverage.h"
+#include "MainCourse.h"
+
 
 //for reading a text file
 #include <iostream>
@@ -13,6 +18,11 @@ Menu::Menu(std::string textfile) //constructor
 Menu::~Menu() //destructor
 {
     //empty
+}
+
+std::string Menu::toString()
+{
+    return "return";
 }
 
 
@@ -34,7 +44,7 @@ void Menu::load(std::string textfile) //opens menu text file
             bool shareable = false;
             bool twoForOne = false;
 
-            double abv = 0.0;
+            float abv = 0.0;
             int volume = 0;
 
             int counter = 0; //counts the commas when parsing the lines of text
@@ -77,11 +87,11 @@ void Menu::load(std::string textfile) //opens menu text file
             }
             else if (itemtype == 'm')
             {
-
+                items.push_back(new MainCourse(name, price, calories));
             }
             else if (itemtype == 'b')
             {
-
+                items.push_back(new Beverage(name, price, calories, abv, volume));
             }
             else
             {

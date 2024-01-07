@@ -30,5 +30,5 @@ double Item::getPrice()
 //other functions
 std::string Item::toString()
 {
-	return;
+	return "return";
 }

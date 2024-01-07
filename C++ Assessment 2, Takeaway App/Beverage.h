@@ -2,6 +2,12 @@
 #include "Item.h"
 class Beverage: public Item
 {
+public:
+	//constructor
+	Beverage(std::string name, double price, int calories, float abv, int volume);
+
+	std::string toString();
+
 private:
 	//private attributers
 	float abv;
@@ -13,6 +19,6 @@ private:
 
 	//other functions
 	bool isAlcoholic();
-	std::string toString();
+	
 };
 

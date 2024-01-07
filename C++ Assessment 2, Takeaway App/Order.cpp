@@ -8,10 +8,10 @@ double Order::calculateTotal()
 
 std::string Order::printReceipt()
 {
-	return 0;
+	return "return";
 }
 
 std::string Order::toString()
 {
-	return 0;
+	return "return";
 }

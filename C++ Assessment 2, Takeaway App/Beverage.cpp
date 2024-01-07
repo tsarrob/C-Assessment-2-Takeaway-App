@@ -1,5 +1,9 @@
 #include "Beverage.h"
 
+//constructor
+Beverage::Beverage(std::string name, double price, int calories, float abv, int volume)
+	:Item(name, price, calories), abv(abv), volume(volume) {}
+
 
 //get functions
 float Beverage::getAbv()
@@ -21,5 +25,5 @@ bool Beverage::isAlcoholic()
 
 std::string Beverage::toString()
 {
-	return;
+	return "return";
 }
