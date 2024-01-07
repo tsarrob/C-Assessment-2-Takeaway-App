@@ -4,6 +4,8 @@
 #include "Beverage.h"
 #include "MainCourse.h"
 
+#include <sstream>
+
 
 //for reading a text file
 #include <iostream>
@@ -22,7 +24,14 @@ Menu::~Menu() //destructor
 
 std::string Menu::toString()
 {
-    return "return";
+    std::ostringstream menuString; //used to build the string
+    menuString << "---------Menu by Robert Lipodatenko---------" << std::endl;
+    menuString << "-----------------Appetisers-----------------" << std::endl;
+
+
+
+    return menuString.str(); //returns the completed string
+
 }
 
 
@@ -44,7 +53,7 @@ void Menu::load(std::string textfile) //opens menu text file
             bool shareable = false;
             bool twoForOne = false;
 
-            float abv = 0.0;
+            double abv = 0.0;
             int volume = 0;
 
             int counter = 0; //counts the commas when parsing the lines of text
@@ -97,13 +106,6 @@ void Menu::load(std::string textfile) //opens menu text file
             {
                 std::cout << "itemtype invalid or not found" << std::endl;
             }
-
-
-
-
-
-
-
             
         }
         myfile.close();

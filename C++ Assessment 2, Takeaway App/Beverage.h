@@ -4,17 +4,17 @@ class Beverage: public Item
 {
 public:
 	//constructor
-	Beverage(std::string name, double price, int calories, float abv, int volume);
+	Beverage(std::string name, double price, int calories, double abv, int volume);
 
 	std::string toString();
 
 private:
 	//private attributers
-	float abv;
+	double abv;
 	int volume;
 
 	//get functions
-	float getAbv();
+	double getAbv();
 	int getVolume();
 
 	//other functions
