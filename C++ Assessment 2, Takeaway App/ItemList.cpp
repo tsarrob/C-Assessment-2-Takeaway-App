@@ -1,5 +1,5 @@
 #include "ItemList.h"
-/*int ItemList::toString()
+std::string ItemList::toString()
 {
-	return 0;
-}*/
+	
+}

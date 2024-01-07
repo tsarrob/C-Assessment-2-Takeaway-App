@@ -4,11 +4,17 @@
 
 class Order: public ItemList
 {
-private:
-	float total;
+public:
+	std::string toString() override;
 
-	float calculateTotal();
+private:
+	//private attributes
+	double total;
+
+	//private functions
+	double calculateTotal();
 	std::string printReceipt();
-	int toString();
+	
+	
 };
 

@@ -2,8 +2,7 @@
 
 
 Item::Item(std::string name, double price, int calories) //constructor, giving item attributes that are passed through when initialising
-	:
-	name(name), price(price), calories(calories) {}
+	:name(name), price(price), calories(calories) {}
 
 
 Item::~Item() //deconstructor

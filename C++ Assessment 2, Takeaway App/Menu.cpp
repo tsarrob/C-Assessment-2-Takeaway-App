@@ -73,7 +73,7 @@ void Menu::load(std::string textfile) //opens menu text file
             //creates object according to the itemtype
             if (itemtype == 'a')
             {
-
+                items.push_back(new Appetiser(name, price, calories, shareable, twoForOne));
             }
             else if (itemtype == 'm')
             {
