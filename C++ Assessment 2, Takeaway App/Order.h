@@ -21,6 +21,7 @@ private:
 	std::vector<Item*> orderItems; //pointer vector
 
 	//private attributes
+	double discount;
 	double total;
 
 	//private functions
