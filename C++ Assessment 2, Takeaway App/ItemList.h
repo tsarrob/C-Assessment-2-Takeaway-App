@@ -9,12 +9,7 @@ public:
 
 	std::vector<Item*> items; //pointer vector
 
-	int getItemsSize()
-	{
-		return items.size();
-	}
-	
-	
+
 private:
 	
 };

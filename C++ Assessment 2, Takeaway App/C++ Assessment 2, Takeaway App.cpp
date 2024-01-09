@@ -23,7 +23,7 @@ int main()
 
 	while (true)
 	{
-		cout << "----------------------------Commands-----------------------------\n";
+		cout << "\n\n----------------------------Commands-----------------------------\n";
 		cout << "1. Show menu \n";
 		cout << "2. Add item to order \n";
 		cout << "3. Remove item from order \n";
@@ -68,18 +68,19 @@ int main()
 		//Add item to order
 		case 2:
 			itemNum = 0;
-			cout << "Input item number that you want to add to order: ";
+			cout << "Input item number that you want to add to order: " << endl;
 			cin >> itemNum;
 
 			if (itemNum >= 1 && itemNum <= menu.getMenuSize())
 			{
-				cout << menu.getMenuSize();
-				order.addOrder(itemNum);
+				Item* pickedItem = menu.getMenuItem(itemNum);
+				order.addOrder(pickedItem);
+				cout << pickedItem->getName() << " has been added to the order!" << endl;
 				
 			}
 			else
 			{
-				std::cout << "Food or Beverage is not found on the menu!\n";
+				cout << "Item not found\n";
 			}
 
 			break;
@@ -96,8 +97,8 @@ int main()
 
 		//checkout
 		case 4:
-
-
+			
+			cout<<order.toString();
 			break;
 
 		//help

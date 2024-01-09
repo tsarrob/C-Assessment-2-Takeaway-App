@@ -132,10 +132,12 @@ void Menu::load(std::string textfile) //opens menu text file
     else std::cout << "Unable to open file";
 
 }
+Item* Menu::getMenuItem(int index)
+{
+    return items[static_cast<std::vector<Item*, std::allocator<Item*>>::size_type>(index) - 1]; //basically index - 1 but in the proper iterator format
+}
 
-int64_t Menu::getMenuSize() //int64_t to prevent loss of data in conversion
+int64_t Menu::getMenuSize()
 {
     return items.size();
 }
-
-

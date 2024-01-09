@@ -10,6 +10,7 @@ public:
 
 	//other functions
 	std::string toString();
+	bool getTwoForOne();
 
 private:
 
@@ -19,7 +20,7 @@ private:
 
 	//get functions
 	bool getShareable();
-	bool getTwoForOne();
+	
 	char getType();
 	
 	

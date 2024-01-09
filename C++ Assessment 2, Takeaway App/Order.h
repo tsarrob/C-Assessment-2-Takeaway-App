@@ -1,5 +1,5 @@
 #pragma once
-#include "ItemList.h"
+#include "Item.h"
 #include "Menu.h"
 #include <string>
 
@@ -13,7 +13,7 @@ public:
 	//other functions
 	std::string toString() override;
 
-	void addOrder(int index);
+	void addOrder(Item* item);
 	void removeOrder(int index);
 
 private:
