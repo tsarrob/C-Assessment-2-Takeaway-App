@@ -8,14 +8,18 @@ public:
 
 	std::string toString();
 
+	
+
 private:
 	//private attributers
+
 	double abv;
 	int volume;
 
 	//get functions
 	double getAbv();
 	int getVolume();
+	char getType();
 
 	//other functions
 	bool isAlcoholic();

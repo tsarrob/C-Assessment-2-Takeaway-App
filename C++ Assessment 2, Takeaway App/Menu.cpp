@@ -26,7 +26,27 @@ std::string Menu::toString()
 {
     std::ostringstream menuString; //used to build the string
     menuString << "---------Menu by Robert Lipodatenko---------" << std::endl;
-    menuString << "-----------------Appetisers-----------------" << std::endl;
+    int j = 0;
+    for (int i = 0; i < items.size(); ++i)
+    {
+        if (items[i]->getType() == 'a' and j == 0)
+        {
+            j = 1;
+            menuString << "-----------------Appetisers-----------------" << std::endl;
+        }
+        if (items[i]->getType() == 'm' and (j == 0 || j ==1))
+        {
+            j = 2;
+            menuString << "-----------------Main Course----------------" << std::endl;
+        }
+        if (items[i]->getType() == 'b' and (j == 0 || j ==1|| j==2))
+        {
+            j = 3;
+            menuString << "-----------------Beverages------------------" << std::endl;
+        }
+        menuString << items[i]->toString() << std::endl;
+    }
+  
 
 
 

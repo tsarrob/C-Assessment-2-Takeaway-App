@@ -27,8 +27,18 @@ double Item::getPrice()
 	return price;
 }
 
+char Item::getType()
+{
+	return 'm';
+}
+
+
 //other functions
 std::string Item::toString()
 {
-	return "return";
+	std::stringstream result;
+
+	result << Item::getName() << ": $" << Item::getPrice() << ", " << Item::getCalories() << " calories, ";
+
+	return result.str();
 }

@@ -20,6 +20,8 @@ private:
 	//get functions
 	bool getShareable();
 	bool getTwoForOne();
+	char getType();
+	
 	
 };
 

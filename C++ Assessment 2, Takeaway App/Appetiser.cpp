@@ -14,10 +14,28 @@ bool Appetiser::getTwoForOne()
 {
 	return twoForOne;
 }
+char Appetiser::getType()
+{
+	return 'a';
+}
+
 
 
 //other functions
 std::string Appetiser::toString()
 {
-	return "return";
+    std::stringstream result;
+
+    result << Item::getName() << ": $" << Item::getPrice() << ", " << Item::getCalories() << " calories, ";
+
+    if (getShareable())
+    {
+        result << " [shareable]";
+    }
+    if (getTwoForOne())
+    {
+        result << " [twoForOne]";
+    }
+
+    return result.str();
 }

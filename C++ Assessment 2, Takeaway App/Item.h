@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <sstream>
 class Item
 {
 public:
@@ -12,10 +13,11 @@ public:
 	int getCalories();
 	std::string getName();
 	double getPrice();
+	virtual char getType() = 0; //pure virtual function
 	
 
 	//other functions
-	std::string toString();
+	virtual std::string toString(); //virtual function
 
 
 private:

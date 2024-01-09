@@ -14,7 +14,10 @@ int Beverage::getVolume()
 {
 	return volume;
 }
-
+char Beverage::getType()
+{
+	return 'b';
+}
 
 
 //other functions
@@ -25,5 +28,16 @@ bool Beverage::isAlcoholic()
 
 std::string Beverage::toString()
 {
-	return "return";
+    std::stringstream result;
+
+    result << Item::getName() << ": $" << Item::getPrice() << ", " << Item::getCalories() << " calories, ";
+
+	if (getAbv() > 0)
+	{
+		result << "Abv:" << getAbv() << "%, ";
+	}
+
+	result << getVolume() << " ml";
+
+    return result.str();
 }
