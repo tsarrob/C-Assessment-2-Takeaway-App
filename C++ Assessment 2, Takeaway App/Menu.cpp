@@ -29,7 +29,7 @@ std::string Menu::toString()
     int j = 0;
     for (int i = 0; i < items.size(); ++i)
     {
-        if (items[i]->getType() == 'a' and j == 0)
+        if (items[i]->getType() == 'a' and j == 0) //outputs the menu in a neat and visually pleasing way
         {
             j = 1;
             menuString << "-----------------Appetisers-----------------" << std::endl;
@@ -44,12 +44,10 @@ std::string Menu::toString()
             j = 3;
             menuString << "-----------------Beverages------------------" << std::endl;
         }
-        menuString << items[i]->toString() << std::endl;
+        
+        menuString << i + 1 <<". " << items[i]->toString() << std::endl;
     }
   
-
-
-
     return menuString.str(); //returns the completed string
 
 }
@@ -135,5 +133,9 @@ void Menu::load(std::string textfile) //opens menu text file
 
 }
 
+int64_t Menu::getMenuSize() //int64_t to prevent loss of data in conversion
+{
+    return items.size();
+}
 
 

@@ -1,7 +1,9 @@
 #include <iostream>
 #include "Menu.h"
 #include "Order.h"
+#include "ItemList.h"
 #include "Item.h"
+
 
 //READ ME
 //PLEASE USE ISO C++ 17 LANGUAGE STANDARD 
@@ -54,25 +56,41 @@ int main()
 			}
 		}
 
-
+		int itemNum = 0;
 		switch (user_choice)
 		{
 
 		//viewing the menu normally
 		case 1:
-
 			cout << menu.toString();
 			break;
 
 		//Add item to order
 		case 2:
+			itemNum = 0;
+			cout << "Input item number that you want to add to order: ";
+			cin >> itemNum;
 
+			if (itemNum >= 1 && itemNum <= menu.getMenuSize())
+			{
+				cout << menu.getMenuSize();
+				order.addOrder(itemNum);
+				
+			}
+			else
+			{
+				std::cout << "Food or Beverage is not found on the menu!\n";
+			}
 
 			break;
 
 		//remove item from order
 		case 3:
+			itemNum = 0;
+			cout << "Input item order number you want to remove: ";
+			cin >> itemNum;
 
+			order.removeOrder(itemNum);
 
 			break;
 
@@ -84,14 +102,18 @@ int main()
 
 		//help
 		case 5:
-
+			cout << "---Help---" << endl;
+			cout << "To order an item from the menu, input 2, to order a specific item from the menu input the number next to the item" << endl;
+			cout << "to pay for your order and checkout, input 4, and further instructions will be given." << endl;
+			cout << "to finish and exit using the program, input 6," << endl <<endl;
 
 			break;
 
 		//exit program
 		case 6:
 
-
+			cout << "exiting program..." << endl;
+			return false;
 			break;
 
 		//add/remove multiple items at once

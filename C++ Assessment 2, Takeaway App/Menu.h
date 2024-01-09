@@ -11,5 +11,6 @@ public:
 	//other functions
 	void load(std::string textfile);//opens menu text file
 	std::string toString();
+	int64_t getMenuSize();
 };
 
