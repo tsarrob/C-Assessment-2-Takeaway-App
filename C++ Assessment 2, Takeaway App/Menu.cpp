@@ -5,6 +5,7 @@
 #include "MainCourse.h"
 
 #include <sstream>
+#include <algorithm>
 
 
 //for reading a text file
@@ -52,6 +53,54 @@ std::string Menu::toString()
 
 }
 
+std::string Menu::toString2(std::string mode)
+{
+    std::vector <Item*> items2 = items; //seperates it from the normal menu viewing to not ruin it.
+    if (mode == "1") // Ascending
+    {
+        std::sort(items2.begin(), items2.end(), [this](Item* item1, Item* item2)  //sortting, lambda function used, [this] "captures" the current object version to access that object verisons attributes and functions
+            {
+            return compareAscending(item1, item2); //body of lambda function non static function, compares both items with the compareAscending function to sort
+            });
+
+        std::ostringstream menuString2;
+        for (int i = 0; i < items2.size(); ++i)
+        {
+            menuString2 << i + 1 << ". " << items2[i]->toString() << std::endl;
+        }
+
+        return menuString2.str();
+    }
+    else if (mode == "2") // Descending
+    {
+        std::sort(items2.begin(), items2.end(), [this](Item* item1, Item* item2) { //same thing as the ascending just in the member function the < is swapped
+            return compareDescending(item1, item2);
+            });
+
+        std::ostringstream menuString2; //build string
+        for (int i = 0; i < items2.size(); ++i) { //iterating through the whole vector
+            menuString2 << i + 1 << ". " << items2[i]->toString() << std::endl; //building string
+        }
+
+        return menuString2.str(); //converts from stream to string
+    }
+    else
+    {
+        std::cout << "Mode selection error" << std::endl;
+    }
+    
+}
+
+
+bool Menu::compareAscending(Item* item1, Item* item2) //Ascending
+{
+    return item1->getPrice() < item2->getPrice(); //returns true if item 2 is bigger
+}
+
+bool Menu::compareDescending(Item* item1, Item* item2) //descending
+{
+    return item1->getPrice() > item2->getPrice(); //returns true if item 1 is bigger
+}
 
 void Menu::load(std::string textfile) //opens menu text file
 {

@@ -44,6 +44,8 @@ int main()
 		string number;
 		string userInput7;
 		
+		//for care 8
+		string userInput8;
 
 
 
@@ -113,6 +115,9 @@ int main()
 			if (checkOut == "yes")
 			{
 				order.printReceipt();
+				cout << "exiting program..." << endl;
+				return false;
+				break;
 			}
 			else
 			{
@@ -158,7 +163,7 @@ int main()
 						if (i + 1 == userInput.size() || userInput[i + 1] == ' ') //it wont overflow
 						{
 							number += userInput[i];
-							userInputs.push_back(stoi(number)); //convers char to int
+							userInputs.push_back(stoi(number)); //convers string to int
 							number = "";
 						}
 						else
@@ -208,19 +213,25 @@ int main()
 				cout << "Invalid input, try again" << endl;
 			}
 
-			
-
-			
-
-			
-
-
 			break;
 
 		//show menu by ascending/descending price order
 		case 8:
+			cout << "Input 1 for ascending, input 2 for descending" << endl;
+			cin >> userInput8;
 
-
+			if (userInput8 == "1")
+			{
+				cout<<menu.toString2("1");
+			}
+			else if (userInput8 == "2")
+			{
+				cout<<menu.toString2("2");
+			}
+			else
+			{
+				cout << "invalid input, try again" << endl;
+			}
 			break;
 
 		}

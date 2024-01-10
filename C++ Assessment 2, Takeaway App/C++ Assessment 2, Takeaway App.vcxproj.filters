@@ -67,5 +67,6 @@
     <Text Include="menu.csv">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="receipt.txt" />
   </ItemGroup>
 </Project>

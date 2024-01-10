@@ -160,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="menu.csv" />
+    <Text Include="receipt.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
