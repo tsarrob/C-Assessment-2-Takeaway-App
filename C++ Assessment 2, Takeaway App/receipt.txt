@@ -1,0 +1,8 @@
+
+------------ Your Order ------------
+1. Buffalo wings: $3.99, 450 calories,  [twoForOne]
+2. Garlic bread: $3.99, 500 calories,  [twoForOne]
+
+2-4-1 Discount applied! Savings: $3.99
+Order Total: $3.99
+

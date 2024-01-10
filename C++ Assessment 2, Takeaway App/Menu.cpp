@@ -77,7 +77,7 @@ void Menu::load(std::string textfile) //opens menu text file
             int counter = 0; //counts the commas when parsing the lines of text
             std::string value = ""; //this is used to save the string once it reaches a comma to seperate the values
 
-            //this updates the defualt variables from the csv accordingly
+            //this updates the default variables from the csv accordingly
             for (int i = 0; i <= line.size() - 1; i++) {
                 if (line[i] == ',' || i >= line.size() - 1) {
 

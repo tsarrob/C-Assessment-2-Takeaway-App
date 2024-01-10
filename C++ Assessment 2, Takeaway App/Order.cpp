@@ -1,11 +1,13 @@
 #include "Order.h"
 #include "Appetiser.h"
 #include "algorithm"
+#include "fstream"
+#include <filesystem>
 
 
 //constructor
 Order::Order() 
-	: orderItems(), total(0.00) {
+	: orderItems(), total(0.00), discount(0.00) {
 } //empty vector
 
 
@@ -15,7 +17,7 @@ Order::~Order() {}
 
 
 //other functions
-double Order::calculateTotal()
+double Order::calculateTotal() //THIS WORKS WITH 2-4-1 cheapest one becomes free, i added an extra row in the menu called "Test Onions" for this.
 {
 	double total = 0.0;
 	double totalDiscount = 0.0;
@@ -62,9 +64,22 @@ double Order::calculateTotal()
 
 
 
-std::string Order::printReceipt()
+void Order::printReceipt()
 {
-	return "return";
+	//std::ifstream myfile(std::filesystem::current_path().string());
+	std::ofstream outputFile("receipt.txt");
+	
+
+	if (outputFile.is_open())
+	{
+		outputFile << toString();
+		outputFile.close();
+		std::cout << "\nReceipt has been written" << std::endl;
+	}
+	else
+	{
+		std::cout << "Error: Unable to open receipt.txt." << std::endl;
+	}
 }
 
 std::string Order::toString()

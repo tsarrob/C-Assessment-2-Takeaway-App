@@ -15,6 +15,7 @@ public:
 
 	void addOrder(Item* item);
 	void removeOrder(int index);
+	void printReceipt();
 
 private:
 
@@ -26,7 +27,7 @@ private:
 
 	//private functions
 	double calculateTotal();
-	std::string printReceipt();
+	
 	
 	
 };

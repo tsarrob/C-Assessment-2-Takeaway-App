@@ -35,6 +35,15 @@ int main()
 		cout << "-----------------------------------------------------------------\n";
 
 		int user_choice; //users input
+		string checkOut;
+
+
+		//for case 7
+		vector<int> userInputs;
+		string userInput;
+		string number;
+		string userInput7;
+		
 
 
 
@@ -99,6 +108,17 @@ int main()
 		case 4:
 			
 			cout<<order.toString();
+			cout<< "Do you want to Checkout and finish your order, input yes or no" << endl;
+			cin >> checkOut;
+			if (checkOut == "yes")
+			{
+				order.printReceipt();
+			}
+			else
+			{
+				break;
+			}
+
 			break;
 
 		//help
@@ -120,9 +140,82 @@ int main()
 		//add/remove multiple items at once
 		case 7:
 
+			cout << "Input \"add\" to add or \"remove\" to remove multiple items at once" << endl;
+			cin >> userInput7;
+			if (userInput7 == "add" || userInput7 =="remove")
+			{
+				cout << "Input multiple order items separated by individual spaces that u want to add/remove e.g. (2 3 5): " << endl;
+
+				cin.ignore(); //make sure getline doesnt get skipped
+				getline(cin, userInput);
+				userInput += ' '; //stops overflow
+
+				//converting users input to multiple inputs and error handling//
+				for (size_t i = 0; i < userInput.size(); i++) //size_t unsigned type to stop the potential error
+				{
+					if (userInput[i] >= '0' && userInput[i] <= '9')
+					{
+						if (i + 1 == userInput.size() || userInput[i + 1] == ' ') //it wont overflow
+						{
+							number += userInput[i];
+							userInputs.push_back(stoi(number)); //convers char to int
+							number = "";
+						}
+						else
+						{
+							number += userInput[i];
+						}
+
+					}
+					else
+					{
+						//skip
+					}
+				}
+
+				//Adding
+				if (userInput7 == "add")
+				{
+					//ordering multiple times
+					for (int j = 0; j < userInputs.size(); ++j)
+					{
+						if (userInputs[j] >= 1 && userInputs[j] <= menu.getMenuSize())
+						{
+							Item* pickedItem = menu.getMenuItem(userInputs[j]);
+							order.addOrder(pickedItem);
+							cout << pickedItem->getName() << " has been added to the order!" << endl;
+
+						}
+					}
+					
+				}
+
+				//Removing
+				else
+				{
+					for (int j = 0; j < userInputs.size(); ++j)
+					{
+						order.removeOrder(userInputs[j]);
+					}
+					
+
+				}
+
+
+			}
+			else
+			{
+				cout << "Invalid input, try again" << endl;
+			}
+
+			
+
+			
+
+			
+
 
 			break;
-
 
 		//show menu by ascending/descending price order
 		case 8:
